@@ -3,25 +3,293 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  /* overflow-x: hidden; */
+}
+
+/* .button-text {
+  transform: translate(-140%, 0);
+  -webkit-transform: translate(-140%, 0);
+  -moz-transform: translate(-140%, 0);
+  -ms-transform: translate(-140%, 0);
+  -o-transform: translate(-140%, 0);
+}
+
+.button-text2 {
+  transform: translate(-140%, 0);
+  -webkit-transform: translate(-140%, 0);
+  -moz-transform: translate(-140%, 0);
+  -ms-transform: translate(-140%, 0);
+  -o-transform: translate(-140%, 0);
+} */
+
+.sign-button {
+  transition: all 0.2s;
+}
+
+.discover-button {
+  border-radius: 0;
+  transition: all 0.2s;
+  transition: border-radius 0.5s;
+  -webkit-transition: border-radius 0.5s;
+  -moz-transition: border-radius 0.5s;
+  -ms-transition: border-radius 0.5s;
+  -o-transition: border-radius 0.5s;
+}
+
+.sign-button:hover {
+  background-color: #db2777;
+  /* background-color: rgb(74, 222, 128); */
+}
+
+.sign-button:hover .button-text {
+  animation: goleft1 5s linear infinite;
+  -webkit-animation: goleft1 5s linear infinite;
+}
+
+.discover-button:hover {
+  background-color: #db2777;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+.discover-button:hover .button-text-big {
+  animation: goleft2 6s linear infinite;
+  -webkit-animation: goleft2 6s linear infinite;
+}
+
+/* .sign-button:hover .button-text2 {
+  animation: goleft2 5s infinite linear 1.25s;
+  -webkit-animation: goleft2 5s infinite linear 1.25s;
+} */
+
+.footer-icon {
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  color: rgb(163 230 53);
+}
+.footer-icon:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  color: #db2777;
+}
+
+/* animations */
+@keyframes goleft1 {
+  0% {
+    opacity: 1;
+    color: white;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+  }
+  25% {
+    opacity: 1;
+    color: white;
+    transform: translate(-140%, 0);
+    -webkit-transform: translate(-140%, 0);
+    -moz-transform: translate(-140%, 0);
+    -ms-transform: translate(-140%, 0);
+    -o-transform: translate(-140%, 0);
+  }
+  26% {
+    color: black;
+    opacity: 0;
+    transform: translate(140%, 440%);
+    -webkit-transform: translate(140%, 440%);
+    -moz-transform: translate(140%, 440%);
+    -ms-transform: translate(140%, 440%);
+    -o-transform: translate(140%, 440%);
+  }
+  27% {
+    opacity: 1;
+    color: white;
+    transform: translate(140%, 0);
+    -webkit-transform: translate(140%, 0);
+    -moz-transform: translate(140%, 0);
+    -ms-transform: translate(140%, 0);
+    -o-transform: translate(140%, 0);
+  }
+
+  50% {
+    opacity: 1;
+    color: white;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+  }
+
+  75% {
+    opacity: 1;
+    color: white;
+    transform: translate(-140%, 0);
+    -webkit-transform: translate(-140%, 0);
+    -moz-transform: translate(-140%, 0);
+    -ms-transform: translate(-140%, 0);
+    -o-transform: translate(-140%, 0);
+  }
+  76% {
+    color: black;
+    opacity: 0;
+    transform: translate(140%, 440%);
+    -webkit-transform: translate(140%, 440%);
+    -moz-transform: translate(140%, 440%);
+    -ms-transform: translate(140%, 440%);
+    -o-transform: translate(140%, 440%);
+  }
+  77% {
+    opacity: 1;
+    color: white;
+    transform: translate(140%, 0);
+    -webkit-transform: translate(140%, 0);
+    -moz-transform: translate(140%, 0);
+    -ms-transform: translate(140%, 0);
+    -o-transform: translate(140%, 0);
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+  }
+}
+
+@keyframes goleft2 {
+  0% {
+    opacity: 1;
+    color: white;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+  }
+  25% {
+    opacity: 1;
+    color: white;
+    transform: translate(-240%, 0);
+    -webkit-transform: translate(-240%, 0);
+    -moz-transform: translate(-240%, 0);
+    -ms-transform: translate(-240%, 0);
+    -o-transform: translate(-240%, 0);
+  }
+  26% {
+    color: black;
+    opacity: 0;
+    transform: translate(240%, 440%);
+    -webkit-transform: translate(240%, 440%);
+    -moz-transform: translate(240%, 440%);
+    -ms-transform: translate(240%, 440%);
+    -o-transform: translate(240%, 440%);
+  }
+  27% {
+    opacity: 1;
+    color: white;
+    transform: translate(240%, 0);
+    -webkit-transform: translate(240%, 0);
+    -moz-transform: translate(240%, 0);
+    -ms-transform: translate(240%, 0);
+    -o-transform: translate(240%, 0);
+  }
+
+  50% {
+    opacity: 1;
+    color: white;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+  }
+
+  75% {
+    opacity: 1;
+    color: white;
+    transform: translate(-240%, 0);
+    -webkit-transform: translate(-240%, 0);
+    -moz-transform: translate(-240%, 0);
+    -ms-transform: translate(-240%, 0);
+    -o-transform: translate(-240%, 0);
+  }
+  76% {
+    color: black;
+    opacity: 0;
+    transform: translate(240%, 440%);
+    -webkit-transform: translate(240%, 440%);
+    -moz-transform: translate(240%, 440%);
+    -ms-transform: translate(240%, 440%);
+    -o-transform: translate(240%, 440%);
+  }
+  77% {
+    opacity: 1;
+    color: white;
+    transform: translate(240%, 0);
+    -webkit-transform: translate(240%, 0);
+    -moz-transform: translate(240%, 0);
+    -ms-transform: translate(240%, 0);
+    -o-transform: translate(240%, 0);
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+  }
+}
+
+/*  scroll bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  /* height: 5px; */
+  height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* custom fonts  */
+@font-face {
+  font-family: TTtrailers;
+  src: url("/my-app/public/fonts/tt_trailers/TTtrailersBold.ttf");
 }
