@@ -10,7 +10,7 @@ export default function page() {
           sorry this website is only for testing not a real website
         </h1>
       </div>
-      <Link href={"/cart"}>
+      <Link href={"/pages/cart"}>
         <div className="flex justify-center items-center">
           <button className=" text-black rounded-full font-mono capitalize text-2xl font-semibold   bg-white mt-20  p-3  w-8/12 transition-colors hover:bg-customRed">
             go back

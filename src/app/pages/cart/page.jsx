@@ -2,8 +2,8 @@
 import { Box, Button, CircularProgress, Divider, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CartCard from "../components/cards/CartCard";
-import { decrement } from "../GlobalRedux/features/cart/cartSlice";
+import CartCard from "../../components/cards/CartCard";
+import { decrement } from "../../GlobalRedux/features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 
@@ -64,8 +64,8 @@ export default function page() {
     };
 
     fetchData();
-    console.log("all prices : ", allPrices);
-    console.log("total prices : ", totalPrice);
+    // console.log("all prices : ", allPrices);
+    // console.log("total prices : ", totalPrice);
   }, []);
 
   return (
@@ -83,7 +83,7 @@ export default function page() {
               total = <span className="text-lime-400">{totalPrice} $</span>
             </h1>
 
-            <Link href={"/payment"}>
+            <Link href={"/pages/payment"}>
               <div className="flex justify-center items-center">
                 <button className=" text-black rounded-full font-mono capitalize md:text-2xl xs:text-lg font-semibold   bg-white  md:p-3 xs:p-2 mt-10 md:w-8/12 xs:w-7/12' transition-colors hover:bg-customRed">
                   buy now 💼

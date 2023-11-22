@@ -134,7 +134,7 @@ export default function page() {
             mb: 5,
           }}
         />
-        <Link href={"/products"}>
+        <Link href={"/pages/products"}>
           <div className="flex justify-center items-center w-full mb-10">
             <button className=" text-black rounded-full font-mono capitalize text-2xl font-semibold   bg-white  p-3 mt-10 w-72 transition-colors hover:bg-customRed">
               shop now

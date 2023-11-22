@@ -13,7 +13,7 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import Image from "next/image";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { increment } from "../GlobalRedux/features/cart/cartSlice";
+import { increment } from "../../GlobalRedux/features/cart/cartSlice";
 import Link from "next/link";
 import { useTheme } from "@emotion/react";
 
@@ -206,7 +206,7 @@ export default function page({ params, searchParams }) {
                 )
               ) : (
                 <h1 className="capitalize text-white md:text-xl xs:text-lg font-mono ">
-                  <Link href={"/sign-in"}>
+                  <Link href={"/pages/sign-in"}>
                     <span className="text-lime-400 md:text-2xl xs:text-xl transition-colors underline hover:text-customRed">
                       {" "}
                       sign-In

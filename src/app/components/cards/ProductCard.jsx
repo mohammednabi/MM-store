@@ -44,7 +44,7 @@ export default function ProductCard({ product }) {
         sx={{ color: "white", maxWidth: { md: "18rem", xs: "15rem" } }}
         className="font-mono"
       >
-        <Link href={`/product?product=${product.id}`}>
+        <Link href={`/pages/product?product=${product.id}`}>
           <Box
             sx={{
               width: { md: "18rem", xs: "15rem" },
@@ -84,7 +84,7 @@ export default function ProductCard({ product }) {
             </Stack>
             {user ? (
               <Stack direction={"row"} spacing={2} alignItems={"center"}>
-                <Link href={`/product?product=${product.id}`}>
+                <Link href={`/pages/product?product=${product.id}`}>
                   <button className="sign-button text-black capitalize flex justify-center bg-lime-400  md:text-sm xs:text-xs p-2  rounded-full gap-5 whitespace-nowrap overflow-hidden">
                     <span className="button-text">show details</span>
                   </button>
@@ -115,7 +115,7 @@ export default function ProductCard({ product }) {
                 )}
               </Stack>
             ) : (
-              <Link href={`/product?product=${product.id}`}>
+              <Link href={`/pages/product?product=${product.id}`}>
                 <button className="capitalize sign-button text-black flex justify-center bg-lime-400 w-full text-sm p-2  rounded-full gap-5 whitespace-nowrap overflow-hidden">
                   <span className="button-text">show details</span>
                 </button>

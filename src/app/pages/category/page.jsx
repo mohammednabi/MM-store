@@ -2,7 +2,7 @@
 
 import { CircularProgress, Stack } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
-import ProductCard from "../components/cards/ProductCard";
+import ProductCard from "../../components/cards/ProductCard";
 import axios from "axios";
 export default function page({ searchParams }) {
   const category = searchParams.category;
@@ -54,7 +54,7 @@ export default function page({ searchParams }) {
       </h1>
       {products ? (
         <Stack
-          direction={"row "}
+          direction={"row"}
           justifyContent={"center"}
           // alignItems={"center"}
           flexWrap={"wrap"}

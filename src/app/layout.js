@@ -9,7 +9,8 @@ import {
   RedirectToUserProfile,
 } from "@clerk/nextjs";
 import { dark, neobrutalism, shadesOfPurple } from "@clerk/themes";
-import { Providers } from "./GlobalRedux/provider";
+// import { Providers } from "./GlobalRedux/provider";
+import { Providers } from "./GlobalRedux/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 

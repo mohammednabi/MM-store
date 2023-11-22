@@ -19,7 +19,7 @@ export default function Section1() {
             >
               Explore and Discover Your Next Favourite product.
             </h1>
-            <Link href={"/products"}>
+            <Link href={"/pages/products"}>
               <button className="discover-button font-mono flex justify-center mb-5 bg-lime-400 w-full xs:mt-5 md:mt-0 text-4xl  p-3 pr-8 pl-8  gap-5 whitespace-nowrap overflow-hidden">
                 <span className="button-text-big ">Discover</span>
               </button>

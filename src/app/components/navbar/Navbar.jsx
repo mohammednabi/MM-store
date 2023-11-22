@@ -54,7 +54,7 @@ export default function Navbar() {
     if (menuRef2.current && !menuRef2.current.contains(e.target)) {
       setTimeout(() => {
         setOpen(false);
-      }, 100);
+      }, 500);
     }
   }
 
@@ -97,7 +97,7 @@ export default function Navbar() {
 
             {/* list */}
             <div className="my-list text-2xl flex justify-center items-center gap-5">
-              <Link href={"/products"}>
+              <Link href={"/pages/products"}>
                 <div className="">Products </div>
               </Link>
 
@@ -137,7 +137,7 @@ export default function Navbar() {
                     {categories.map((c) => (
                       <Link
                         key={c}
-                        href={`category?category=${c}`}
+                        href={`/pages/category?category=${c}`}
                         onClick={handleReload}
                       >
                         <h1 className="category capitalize ">{c}</h1>
@@ -147,7 +147,7 @@ export default function Navbar() {
                 )}
               </div>
 
-              <Link href={"/about"}>
+              <Link href={"/pages/about"}>
                 <div className="">About </div>
               </Link>
             </div>
@@ -155,12 +155,12 @@ export default function Navbar() {
             <div className="buttons flex justify-center items-center gap-5">
               {!user && (
                 <>
-                  <Link href={"/sign-in"}>
+                  <Link href={"/pages/sign-in"}>
                     <button className=" text-black w-11/12 bg-white text-2xl p-3 pr-8 pl-8 rounded-full">
                       login
                     </button>
                   </Link>
-                  <Link href={"/sign-up"}>
+                  <Link href={"/pages/sign-up"}>
                     <button className="sign-button text-black flex justify-center bg-lime-400 w-11/12 text-2xl p-3 pr-8 pl-8 rounded-full gap-5 whitespace-nowrap overflow-hidden">
                       <span className="button-text">sign up</span>
                     </button>
@@ -170,7 +170,7 @@ export default function Navbar() {
               {user && (
                 <>
                   <Badge badgeContent={cartCount} color="success">
-                    <Link href={"/cart"}>
+                    <Link href={"/pages/cart"}>
                       <ShoppingCart sx={{ color: "white", fontSize: "2rem" }} />
                     </Link>
                   </Badge>
@@ -228,7 +228,7 @@ export default function Navbar() {
                   <div className="buttons flex justify-center items-center gap-5">
                     {!user && (
                       <>
-                        <Link href={"/sign-up"}>
+                        <Link href={"/pages/sign-up"}>
                           <button className="sign-button text-black flex justify-center bg-lime-400 w-11/12 text-2xl p-1 pr-8 pl-8 rounded-full gap-5 whitespace-nowrap overflow-hidden">
                             <span className="button-text">login</span>
                           </button>
@@ -239,7 +239,7 @@ export default function Navbar() {
                       <>
                         <Badge badgeContent={cartCount} color="success">
                           <Link
-                            href={"/cart"}
+                            href={"/pages/cart"}
                             onClick={() => {
                               setOpen(false);
                             }}
@@ -263,7 +263,7 @@ export default function Navbar() {
                     }}
                   />
                   <Link
-                    href={"/products"}
+                    href={"/pages/products"}
                     onClick={() => {
                       setOpen(false);
                     }}
@@ -273,7 +273,7 @@ export default function Navbar() {
                     </h1>
                   </Link>
                   <Link
-                    href={"/about"}
+                    href={"/pages/about"}
                     onClick={() => {
                       setOpen(false);
                     }}
@@ -319,7 +319,7 @@ export default function Navbar() {
                         {categories.map((c) => (
                           <Link
                             key={c}
-                            href={`category?category=${c}`}
+                            href={`/pages/category?category=${c}`}
                             onClick={() => {
                               handleReload();
                               setOpen(false);

@@ -2,7 +2,7 @@
 
 import { CircularProgress, Stack } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
-import ProductCard from "../components/cards/ProductCard";
+import ProductCard from "../../components/cards/ProductCard";
 import axios from "axios";
 import { motion } from "framer-motion";
 

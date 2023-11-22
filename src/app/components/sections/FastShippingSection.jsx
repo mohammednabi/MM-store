@@ -41,7 +41,7 @@ export default function FastShippingSection() {
             >
               From Our Warehouse to Your Doorstep in No Time.
             </h1>
-            <Link href={"/about"}>
+            <Link href={"/pages/about"}>
               <button className="discover-button font-mono flex justify-center mb-5 bg-lime-400 w-full xs:mt-5 md:mt-0 text-4xl  p-3 pr-8 pl-8  gap-5 whitespace-nowrap overflow-hidden">
                 <span className="button-text-big ">Learn More</span>
               </button>
