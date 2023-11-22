@@ -5,6 +5,7 @@ import axios from "axios";
 import CartCard from "../components/cards/CartCard";
 import { decrement } from "../GlobalRedux/features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 
 export default function page() {
   const dispatch = useDispatch();
@@ -78,9 +79,17 @@ export default function page() {
                 <CartCard key={p.id} product={p} deleteItem={deleteItem} />
               ))}
             <Divider sx={{ background: "rgb(255,255,255,.1)", mt: 5, mb: 5 }} />
-            <h1 className="text-white capitalize text-3xl font-mono text-center">
+            <h1 className="text-white capitalize md:text-3xl xs:text-xl font-mono text-center">
               total = <span className="text-lime-400">{totalPrice} $</span>
             </h1>
+
+            <Link href={"/payment"}>
+              <div className="flex justify-center items-center">
+                <button className=" text-black rounded-full font-mono capitalize md:text-2xl xs:text-lg font-semibold   bg-white  md:p-3 xs:p-2 mt-10 md:w-8/12 xs:w-7/12' transition-colors hover:bg-customRed">
+                  buy now 💼
+                </button>
+              </div>
+            </Link>
           </Stack>
         ) : (
           <Stack

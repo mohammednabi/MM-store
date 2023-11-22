@@ -3,13 +3,8 @@
 import { Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import localFont from "next/font/local";
-import { motion } from "framer-motion";
-import ProductCard from "../cards/ProductCard";
 
-const myFont = localFont({
-  src: "/TTtrailersBold.ttf",
-});
+import { motion } from "framer-motion";
 
 export default function BlackFriday() {
   return (
@@ -20,13 +15,10 @@ export default function BlackFriday() {
         sx={{ overflowX: "hidden" }}
       >
         <div
-          className={myFont.className}
           style={{
-            textTransform: "uppercase",
             lineHeight: ".8",
-            fontSize: "8rem",
-            textAlign: "center",
           }}
+          className="font-primary uppercase md:text-9xl xs:text-7xl text-center "
         >
           <h1
             style={{
@@ -53,7 +45,10 @@ export default function BlackFriday() {
           </motion.h1>
         </div>
 
-        <Container maxWidth="lg">
+        <Container
+          maxWidth="lg"
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
           <Image
             // src={
             //   "https://images.pexels.com/photos/256198/pexels-photo-256198.jpeg"
@@ -65,15 +60,10 @@ export default function BlackFriday() {
             // Make the image display full width
             width={100}
             height={100}
-            style={{
-              width: "150%",
-              height: "auto",
-              mixBlendMode: "screen",
-            }}
-            className=" border-0 border-solid border-lime-400 rounded-xl "
+            className=" xs:w-96 md:w-full h-auto   rounded-xl  mix-blend-screen"
+            alt="motion gif"
           />
         </Container>
-        {/* <ProductCard /> */}
       </Container>
     </>
   );

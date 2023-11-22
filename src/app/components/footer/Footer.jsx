@@ -34,23 +34,28 @@ export default function Footer() {
           justifyContent={"center"}
           alignItems={"center"}
           spacing={2}
+          sx={{ mb: 10 }}
         >
           <Link href={facebookLink} target="blank" className="footer-icon">
-            <FacebookIcon sx={{ fontSize: "3rem" }} />
+            <FacebookIcon sx={{ fontSize: { md: "3rem", xs: "2rem" } }} />
           </Link>
           <Link href={githubLink} target="blank" className="footer-icon">
-            <GitHubIcon sx={{ fontSize: "3.5rem" }} />
+            <GitHubIcon sx={{ fontSize: { md: "3.5rem", xs: "2.5rem" } }} />
           </Link>
           <Link href={linkedInLink} target="blank" className="footer-icon">
-            <LinkedInIcon sx={{ fontSize: "3rem" }} />
+            <LinkedInIcon sx={{ fontSize: { md: "3rem", xs: "2rem" } }} />
           </Link>
         </Stack>
-        <div className="flex gap-5 items-center">
-          <h1 className="font-mono text-3xl capitalize">created by </h1>
+        <div className="flex gap-5 items-center ">
+          <h1 className="font-mono md:text-3xl xs:text-xl capitalize">
+            created by{" "}
+          </h1>
           <Image
             width={150}
             height={150}
             src={"/imgs/nebo offical white logo edited.png"}
+            alt="nebo logo"
+            className="md:w-40 xs:w-20 h-auto"
           />
         </div>
       </Stack>

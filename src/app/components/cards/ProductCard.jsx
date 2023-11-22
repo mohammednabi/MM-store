@@ -41,14 +41,14 @@ export default function ProductCard({ product }) {
     <>
       <Stack
         spacing={2}
-        sx={{ color: "white", maxWidth: "18rem" }}
+        sx={{ color: "white", maxWidth: { md: "18rem", xs: "15rem" } }}
         className="font-mono"
       >
         <Link href={`/product?product=${product.id}`}>
           <Box
             sx={{
-              width: "18rem",
-              height: "18rem",
+              width: { md: "18rem", xs: "15rem" },
+              height: { md: "18rem", xs: "15rem" },
               border: "1px rgb(163 230 53) solid",
               borderRadius: "1rem",
               overflow: "hidden",
@@ -66,51 +66,61 @@ export default function ProductCard({ product }) {
         </Link>
         <Stack
           spacing={2}
-          sx={{ height: "15rem" }}
-          justifyContent={"space-between"}
+          sx={{
+            height: "15rem",
+            justifyContent: { md: "space-between", xs: "center" },
+          }}
         >
-          <h1 className="text-2xl font-mono">{product.title}</h1>
-          {/* <h2 className="text-md font-mono">{product.description}</h2> */}
+          <h1 className="md:text-2xl xs:text-lg font-mono">{product.title}</h1>
+
           <Stack spacing={4}>
             <Stack>
-              <h2 className="text-xl text-lime-400">
+              <h2 className="md:text-xl xs:text-sm text-lime-400">
                 {priceAfterDiscount.toFixed(2)} $
               </h2>
-              <h1 className="text-md line-through text-customRed">
+              <h1 className="md:text-md xs:text-xs line-through text-customRed">
                 {product.price} $
               </h1>
             </Stack>
-            <Stack direction={"row"} spacing={2} alignItems={"center"}>
+            {user ? (
+              <Stack direction={"row"} spacing={2} alignItems={"center"}>
+                <Link href={`/product?product=${product.id}`}>
+                  <button className="sign-button text-black capitalize flex justify-center bg-lime-400  md:text-sm xs:text-xs p-2  rounded-full gap-5 whitespace-nowrap overflow-hidden">
+                    <span className="button-text">show details</span>
+                  </button>
+                </Link>
+
+                {!product.added ? (
+                  <button
+                    onClick={() => {
+                      if (user) {
+                        addToWatchList(product);
+                      }
+                    }}
+                    className=" text-black rounded-full capitalize bg-white md:text-sm xs:text-xs p-3 transition-colors hover:bg-customRed"
+                  >
+                    add to cart ➕
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      if (user) {
+                        addToWatchList(product);
+                      }
+                    }}
+                    className=" text-white rounded-full capitalize  bg-customRed md:text-sm xs:text-xs p-3 "
+                  >
+                    added to cart ✔
+                  </button>
+                )}
+              </Stack>
+            ) : (
               <Link href={`/product?product=${product.id}`}>
-                <button className="sign-button text-black flex justify-center bg-lime-400  text-sm p-2  rounded-full gap-5 whitespace-nowrap overflow-hidden">
+                <button className="capitalize sign-button text-black flex justify-center bg-lime-400 w-full text-sm p-2  rounded-full gap-5 whitespace-nowrap overflow-hidden">
                   <span className="button-text">show details</span>
                 </button>
               </Link>
-
-              {!product.added ? (
-                <button
-                  onClick={() => {
-                    if (user) {
-                      addToWatchList(product);
-                    }
-                  }}
-                  className=" text-black rounded-full bg-white text-sm p-3 transition-colors hover:bg-customRed"
-                >
-                  add to cart ➕
-                </button>
-              ) : (
-                <button
-                  onClick={() => {
-                    if (user) {
-                      addToWatchList(product);
-                    }
-                  }}
-                  className=" text-white rounded-full  bg-customRed text-sm p-3 "
-                >
-                  added to cart ✔
-                </button>
-              )}
-            </Stack>
+            )}
           </Stack>
         </Stack>
       </Stack>

@@ -2,14 +2,16 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-export const cartSlice = createSlice({
-  name: "cartCount",
-  initialState: {
-    value: localStorage.getItem("products")
+const initialState = {
+  value:
+    typeof window !== "undefined" && localStorage.getItem("products")
       ? JSON.parse(localStorage.getItem("products")).length
       : 0,
-    // value: 2,
-  },
+};
+
+export const cartSlice = createSlice({
+  name: "cartCount",
+  initialState,
   reducers: {
     increment: (state) => {
       state.value += 1;

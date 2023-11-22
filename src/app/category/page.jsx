@@ -4,43 +4,14 @@ import { CircularProgress, Stack } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
 import ProductCard from "../components/cards/ProductCard";
 import axios from "axios";
-import { motion } from "framer-motion";
-
-export default function page() {
+export default function page({ searchParams }) {
+  const category = searchParams.category;
   const [products, setProducts] = useState();
 
-  // const response = await fetch(
-  //   "https://dummyjson.com/products?limit=100&skip=0&"
-  // );
-  // const products = await response.json();
-  // const addedProducts = useMemo(() => {
-  //   return JSON.parse(localStorage.getItem("products"));
-  // }, []);
-
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
-  async function getAllProducts() {
+  async function getAllProducts(cat) {
     try {
       const response = await axios.get(
-        "https://dummyjson.com/products?limit=100&skip=0&"
+        `https://dummyjson.com/products/category/${cat}`
       );
 
       const editedProducts = response.data.products.map((p) => {
@@ -72,35 +43,26 @@ export default function page() {
   }
 
   useEffect(() => {
-    getAllProducts();
+    getAllProducts(category);
     // checkAddedProducts();
   }, [products]);
 
   return (
     <>
       <h1 className="text-3xl capitalize text-lime-400 text-center font-mono font-semibold mt-10 mb-10">
-        all products
+        {category}
       </h1>
       {products ? (
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "2rem",
-            margin: "2rem 0",
-            justifyContent: "center",
-          }}
+        <Stack
+          direction={"row "}
+          justifyContent={"center"}
+          // alignItems={"center"}
+          flexWrap={"wrap"}
+          sx={{ gap: "2rem", mt: 5, mb: 5 }}
         >
           {products &&
-            products.map((p) => (
-              <motion.div key={p.id} variants={item}>
-                <ProductCard product={p} />
-              </motion.div>
-            ))}
-        </motion.div>
+            products.map((p) => <ProductCard product={p} key={p.id} />)}
+        </Stack>
       ) : (
         <Stack
           alignItems={"center"}
