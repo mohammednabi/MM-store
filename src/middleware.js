@@ -5,7 +5,13 @@ import { authMiddleware } from "@clerk/nextjs";
 // See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your Middleware
 export default authMiddleware({
   // all these pages will be accessible to all users
-  publicRoutes: ["/", "/products", "/product", "/about", "/category"],
+  publicRoutes: [
+    "/",
+    "/pages/products",
+    "/pages/product",
+    "/pages/about",
+    "/pages/category",
+  ],
   // ignoredRoutes: ["/((?!api|trpc))(_next.*|.+.[w]+$)", "/products"],
 });
 
